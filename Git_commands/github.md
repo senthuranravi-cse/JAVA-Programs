@@ -21,7 +21,7 @@
 
 Modify -> Add -> commit -> push
 - >git add filename
-- -To add bulk files
+- - To add bulk files
 -  - >git add .
 - >git commit -m "commit message"
 - >git push origin branch
