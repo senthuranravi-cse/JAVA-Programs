@@ -60,4 +60,21 @@ You need check branch
 ## Pull Request
 #### Sometimes you can't get direct access to main repo for that you raise pull request to your higher official they check your changes and then allow to merge with main repo. It can't done by cmd using github only you can raise pull request
 
+## Merge Two repo
+Let's say you have two repositories: RepoA and RepoB. You want to merge the master branch from RepoB into RepoA.
 
+Clone RepoA to your local machine if you haven't already:
+- >git clone <RepoA_URL>
+- >cd RepoA
+
+Add RepoB as a remote:
+- >git remote add RepoB <RepoB_URL>
+
+Fetch the branches from RepoB:
+- >git fetch RepoB
+
+Merge the master branch from RepoB into RepoA:
+- >git merge RepoB/master
+
+## Tags
+#### In GitHub, tags are used to mark specific points in a repository's history, usually to signify a particular release or version. Tags are often used to create stable reference points for the codebase, allowing you to easily refer back to specific versions of your project. 
