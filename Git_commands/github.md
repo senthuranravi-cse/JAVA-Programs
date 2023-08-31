@@ -1,16 +1,16 @@
 # GITHUB
 
-## Global config:
+## Global config
 - >git config --global user.name "senthuranravi-cse "
 - >git config --global user.email "senthuran.ravi02@gmail.com"
 
-## Cloning project:
+## Cloning project
 - >git clone link
 
-## Check Status:
+## Check Status
 - >git status
 
-## Github modify files:
+## Github modify files
  After cloning .git file is create in directory using this only you can get your files to github
 
  Working_System -> .git -> Github
@@ -78,3 +78,6 @@ Merge the master branch from RepoB into RepoA:
 
 ## Tags
 #### In GitHub, tags are used to mark specific points in a repository's history, usually to signify a particular release or version. Tags are often used to create stable reference points for the codebase, allowing you to easily refer back to specific versions of your project. 
+
+## Fork
+#### In the context of version control systems like Git and platforms like GitHub, a "fork" refers to the act of creating a copy of a repository, typically someone else's repository, in order to make your own changes or contributions without affecting the original repository. 
