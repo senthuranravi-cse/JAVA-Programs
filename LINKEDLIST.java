@@ -113,7 +113,7 @@ class ll{
     }
     void reverse()
     {
-        Node temp=head;
+        
         Node next=null;
         Node curr=head;
         Node prev=null;
@@ -154,6 +154,7 @@ class LLALL
          System.out.println("------------------------");
          obj.reverse();
         obj.print();
+        sc.close();
         
     }
 }
