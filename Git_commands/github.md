@@ -19,10 +19,10 @@
 
  Github -> git_folder -> working_folder -> Staging_area
 
- Modify -> Add -> commit -> push
+Modify -> Add -> commit -> push
 - >git add filename
- To add bulk files
--  >git add .
+- - To add bulk files
+-  - >git add .
 - >git commit -m "commit message"
 - >git push origin branch
 
