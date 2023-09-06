@@ -11,15 +11,15 @@
 - >git status
 
 ## Github modify files
- After cloning .git file is create in directory using this only you can get your files to github
+- After cloning .git file is create in directory using this only you can get your files to github
 
- Working_System -> .git -> Github
+ -Working_System -> .git -> Github
 
- For adding files to git hub you need to move your file staging area from that you need to move your file to .git folder.After that only you can add your file to github
+ -For adding files to git hub you need to move your file staging area from that you need to move your file to .git folder.After that only you can add your file to github
 
- Github -> git_folder -> working_folder -> Staging_area
+- Github -> git_folder -> working_folder -> Staging_area
 
-Modify -> Add -> commit -> push
+-Modify -> Add -> commit -> push
 - >git add filename
 - - To add bulk files
 -  - >git add .
@@ -30,11 +30,11 @@ Modify -> Add -> commit -> push
 - >git pull
 
 ## Add folder in github new repo
- First you need add .git file in newfolder for that you need this commands
+- First you need add .git file in newfolder for that you need this commands
 - >git init
- After you need add origin link in the folder
+- After you need add origin link in the folder
 -  >git remote add origin link
-You need check branch
+- You need check branch
 - >git branch
 - >git branch -M branch_name
 
