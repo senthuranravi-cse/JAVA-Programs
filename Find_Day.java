@@ -63,22 +63,38 @@ public class Find_Day {
                 
             }
         }
-        if(year==2000)
+        if(year<1999)
         {
-             int sum2=0;
+            for(int i=1600;i<year;i++)
+            {
+                sum=sum+365;
+                if(i%4==0)
+                {
+                    leap+=1;
+                   // System.out.println("okk"+leap);
+                }
+            }
+           // System.out.println(sum);
+                sum=sum+leap;
+                int remain=sum%7;
+            //System.out.println(remain);
+            
+            int sum2=0;
             for(int i=0;i<mon-1;i++)
             {
                 sum2=sum2+month[i];
 
             }
+            //System.out.println(sum2);
             int remain2=sum2%7;
-           
+            if(year%4==0)
+            {
                 remain2=remain2+1;
                //System.out.println("ok"+leap);
 
-      
+            }
             //System.out.println(remain2);
-            int t_balance=remain2+day;
+            int t_balance=remain+remain2+day;
             //System.out.println(t_balance);
             int original=t_balance%7;
             //System.out.println(original);
