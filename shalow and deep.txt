@@ -1,0 +1,116 @@
+program for shallow copy in java
+ChatGPT
+In Java, you can create a shallow copy of an object by simply copying the references to the objects contained within the original object, rather than creating new copies of the objects themselves. This means that changes made to the objects within the copied object will also be reflected in the original object and vice versa. To perform a shallow copy, you can use various methods, but one common approach is to implement the Cloneable interface and override the clone method. Here's an example of how to create a shallow copy in Java:
+
+java
+Copy code
+class Student implements Cloneable {
+    private String name;
+    private int age;
+
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Getter and Setter methods
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+}
+
+public class ShallowCopyExample {
+    public static void main(String[] args) {
+        try {
+            // Create an original Student object
+            Student originalStudent = new Student("John", 20);
+
+            // Perform a shallow copy
+            Student copiedStudent = (Student) originalStudent.clone();
+
+            // Modify the copied student
+            copiedStudent.setName("Alice");
+            copiedStudent.setAge(22);
+
+            // Print the original and copied student details
+            System.out.println("Original Student: " + originalStudent.getName() + ", " + originalStudent.getAge());
+            System.out.println("Copied Student: " + copiedStudent.getName() + ", " + copiedStudent.getAge());
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+In this example, the Student class implements the Cloneable interface and overrides the clone method to create a shallow copy. The main method demonstrates how to create an original Student object and make a shallow copy of it. Note that changes made to the copied student object do not affect the original student object, but both objects still reference the same String and int fields, which is why it's a shallow copy.
+
+
+
+
+User
+deep copy in java
+ChatGPT
+To create a deep copy of an object in Java, you need to ensure that not only the object itself is copied but also all the objects contained within it, recursively. This means that the copied object and all the objects it references should be completely independent of the original object.
+
+One common approach to achieve deep copy is by implementing a custom deep copy method, or by using third-party libraries like Apache Commons Lang or Gson for complex objects. Here's an example of how to create a deep copy of an object manually:
+
+java
+Copy code
+import java.io.*;
+
+class Address implements Serializable {
+    private String street;
+    private String city;
+
+    public Address(String street, String city) {
+        this.street = street;
+        this.city = city;
+    }
+
+    // Getter and Setter methods
+
+    // Deep copy constructor
+    public Address(Address other) {
+        this.street = other.street;
+        this.city = other.city;
+    }
+}
+
+class Person implements Serializable {
+    private String name;
+    private int age;
+    private Address address;
+
+    public Person(String name, int age, Address address) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
+    }
+
+    // Getter and Setter methods
+
+    // Deep copy constructor
+    public Person(Person other) {
+        this.name = other.name;
+        this.age = other.age;
+        this.address = new Address(other.address);
+    }
+}
+
+public class DeepCopyExample {
+    public static void main(String[] args) {
+        Address originalAddress = new Address("123 Main St", "Cityville");
+        Person originalPerson = new Person("John", 30, originalAddress);
+
+        // Create a deep copy of the original person
+        Person copiedPerson = new Person(originalPerson);
+
+        // Modify the copied person's address
+        copiedPerson.getAddress().setStreet("456 Elm St");
+
+        // Print the original and copied person details
+        System.out.println("Original Person: " + originalPerson.getName() + ", " + originalPerson.getAge() + ", " + originalPerson.getAddress().getStreet());
+        System.out.println("Copied Person: " + copiedPerson.getName() + ", " + copiedPerson.getAge() + ", " + copiedPerson.getAddress().getStreet());
+    }
+}
+In this example, we have two classes, Address and Person, which implement the Serializable interface to enable deep copying using serialization. Each class has a deep copy constructor that creates a new instance of the object and copies the data within it. When we create a deep copy of the Person object, it also creates a deep copy of the Address object contained within it, ensuring that changes made to the copied person's address do not affect the original person's address.
