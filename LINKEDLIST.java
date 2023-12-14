@@ -39,9 +39,9 @@ class ll{
     {
         int i=1;
         Node temp=head;
-        while(true)
+
+            Node newo=new Node(val);        while(true)
         {
-            Node newo=new Node(val);
             if(pos==0)
             {
                 
